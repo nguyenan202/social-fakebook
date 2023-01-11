@@ -19,7 +19,7 @@ const RegisterForn = ({ registerSchema, setPageType }) => {
         const newData = { ...data }
         delete newData['rePassword'];
 
-        const loggedInResponse = await fetch("http://localhost:8080/auth/register", {
+        const loggedInResponse = await fetch(`${process.env.REACT_APP_HOST_NAME}/auth/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newData),

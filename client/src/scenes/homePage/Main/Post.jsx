@@ -32,7 +32,7 @@ const Post = ({ fullName, userPicturePath, createdAt, description, imagePath, li
 
     const handleLike = async () => {
 
-        const response = await fetch(`http://localhost:8080/posts/${postId}/like`, {
+        const response = await fetch(`${process.env.REACT_APP_HOST_NAME}/posts/${postId}/like`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ const Post = ({ fullName, userPicturePath, createdAt, description, imagePath, li
 
         let date = new Date(Date.now());
 
-        const response = await fetch(`http://localhost:8080/posts/${postId}/comment`, {
+        const response = await fetch(`${process.env.REACT_APP_HOST_NAME}/posts/${postId}/comment`, {
             method: 'PUT',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ const Post = ({ fullName, userPicturePath, createdAt, description, imagePath, li
         <Grid container padding='1rem' marginTop='1.5rem' marginBottom='2rem' style={{ backgroundColor: background }} borderRadius='8px'>
 
             <Grid item xs={12} display='flex' >
-                <Avatar src={`http://localhost:8080/images/${userPicturePath}`} alt={fullName} />
+                <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${userPicturePath}`} alt={fullName} />
                 <Grid container display='block' sx={{ marginLeft: '1rem' }}>
                     <Typography
                         sx={{
@@ -135,7 +135,7 @@ const Post = ({ fullName, userPicturePath, createdAt, description, imagePath, li
             </Grid>
 
             {imagePath && <Grid item xs={12}>
-                <img src={`http://localhost:8080/images/${imagePath}`} height='440px' width='100%' alt={fullName} />
+                <img src={`${process.env.REACT_APP_HOST_NAME}/images/${imagePath}`} height='440px' width='100%' alt={fullName} />
             </Grid>}
 
             {(usersLikePost > 0 || totalComments > 0) && <Grid item xs={12} display='flex' justifyContent='space-between' borderBottom='1px solid #3E4042' padding='0.5rem 0'>
@@ -197,7 +197,7 @@ const Post = ({ fullName, userPicturePath, createdAt, description, imagePath, li
             {isComment &&
                 <>
                     <Grid item xs={12} padding='1rem 0 0.5rem 0' borderTop='1px solid #3E4042' display='flex' justifyContent='space-between'>
-                        <Avatar src={`http://localhost:8080/images/${user.picturePath}`} alt={user.firstName} sx={{ width: '36px', height: '36px' }} />
+                        <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${user.picturePath}`} alt={user.firstName} sx={{ width: '36px', height: '36px' }} />
                         <TextareaAutosize
                             placeholder="Write comment..."
                             style={{

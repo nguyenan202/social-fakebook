@@ -15,7 +15,7 @@ const FriendRequest = ({ userId, fullName, picturePath }) => {
 
     const handleAccept = async () => {
 
-        const response = fetch(`http://localhost:8080/users/friend-request/accept/${user._id}/${userId}`, {
+        const response = fetch(`${process.env.REACT_APP_HOST_NAME}/users/friend-request/accept/${user._id}/${userId}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ const FriendRequest = ({ userId, fullName, picturePath }) => {
 
     const handleRefuse = async () => {
 
-        const response = fetch(`http://localhost:8080/users/friend-request/refuse/${user._id}/${userId}`, {
+        const response = fetch(`${process.env.REACT_APP_HOST_NAME}/users/friend-request/refuse/${user._id}/${userId}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ const FriendRequest = ({ userId, fullName, picturePath }) => {
             }}
         >
             <Box display='flex' alignItems='center'>
-                <Avatar src={`http://localhost:8080/images/${picturePath}`} alt={fullName} sx={{ width: '3rem', height: '3rem' }} />
+                <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${picturePath}`} alt={fullName} sx={{ width: '3rem', height: '3rem' }} />
                 <Typography
                     sx={{
                         fontSize: '1.5rem',

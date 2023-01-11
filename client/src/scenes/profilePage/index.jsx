@@ -15,7 +15,7 @@ const ProfilePage = () => {
     useEffect(() => {
 
         const getUser = async () => {
-            const response = fetch(`http://localhost:8080/users/${userId}`, {
+            const response = fetch(`${process.env.REACT_APP_HOST_NAME}/users/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`

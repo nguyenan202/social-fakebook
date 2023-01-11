@@ -18,7 +18,7 @@ const ProfileHome = ({ user, breakPoint }) => {
             <Grid container style={{ backgroundColor: background }} borderRadius='8px' padding='1rem'>
 
                 <Grid item xs={12} display='flex' borderBottom='1px solid #3E4042' paddingBottom='1rem'>
-                    <Avatar src={`http://localhost:8080/images/${user.picturePath}`} alt={user.firstName} />
+                    <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${user.picturePath}`} alt={user.firstName} />
                     <Grid container marginLeft='1rem'>
                         <Grid item xs={12}>
                             <Typography fontSize='14px' fontWeight='medium'>

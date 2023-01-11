@@ -30,7 +30,7 @@ const HeaderProfile = ({ user, setUser }) => {
 
     const handleAddFriend = async () => {
 
-        const response = fetch(`http://localhost:8080/users/friend-request/${currentUser._id}/${user._id}`, {
+        const response = fetch(`${process.env.REACT_APP_HOST_NAME}/users/friend-request/${currentUser._id}/${user._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ const HeaderProfile = ({ user, setUser }) => {
 
     const handleAcceptFriend = async () => {
 
-        const response = fetch(`http://localhost:8080/users/friend-request/accept/${currentUser._id}/${user._id}`, {
+        const response = fetch(`${process.env.REACT_APP_HOST_NAME}/users/friend-request/accept/${currentUser._id}/${user._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -84,7 +84,7 @@ const HeaderProfile = ({ user, setUser }) => {
                     }}
                 >
                     {user.pictureBackgroundPath === '' ? <DefaultBackground /> :
-                        <img src={`http://localhost:8080/images/${user.pictureBackgroundPath}`} alt='bgImage' width='100%' />}
+                        <img src={`${process.env.REACT_APP_HOST_NAME}/images/${user.pictureBackgroundPath}`} alt='bgImage' width='100%' />}
                 </Box>
             </Box>
 
@@ -111,7 +111,7 @@ const HeaderProfile = ({ user, setUser }) => {
                         }}
                     >
                         <Avatar
-                            src={`http://localhost:8080/images/${user.picturePath}`}
+                            src={`${process.env.REACT_APP_HOST_NAME}/images/${user.picturePath}`}
                             alt='avatar'
                             sx={{
                                 width: '168px',

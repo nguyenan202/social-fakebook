@@ -26,7 +26,7 @@ const Friend = ({ userId, fullName, picturePath, }) => {
             }}
             onClick={handleNavigateProfile}
         >
-            <Avatar src={`http://localhost:8080/images/${picturePath}`} alt={fullName} />
+            <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${picturePath}`} alt={fullName} />
 
             <Typography
                 sx={{

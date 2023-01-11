@@ -14,7 +14,6 @@ const LoginForn = ({ loginSchema, setPageType }) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    //http://localhost:8080/auth/login
 
     const login = async (data, onSubmitProps) => {
         const loggedInResponse = await fetch(`${process.env.REACT_APP_HOST_NAME}/auth/login`, {

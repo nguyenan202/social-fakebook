@@ -6,7 +6,7 @@ import Post from "./Post";
 
 const refreshPosts = async (dispatch, token) => {
 
-    const response = await fetch(`http://localhost:8080/posts`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST_NAME}/posts`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` }
     });

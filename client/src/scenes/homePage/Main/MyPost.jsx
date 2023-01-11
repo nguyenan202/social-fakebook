@@ -51,7 +51,7 @@ const MyPost = () => {
             formData.append("picturePath", image.name);
         }
 
-        const response = await fetch(`http://localhost:8080/posts`, {
+        const response = await fetch(`${process.env.REACT_APP_HOST_NAME}/posts`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -72,7 +72,7 @@ const MyPost = () => {
         <Grid container padding='1rem' marginTop='2rem' style={{ backgroundColor: background }} borderRadius='8px'>
 
             <Grid item xs={12} display='flex' >
-                <Avatar src={`http://localhost:8080/images/${user.picturePath}`} alt={user.firstName} />
+                <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${user.picturePath}`} alt={user.firstName} />
                 <TextareaAutosize
                     placeholder="What's on your mind..."
                     style={{

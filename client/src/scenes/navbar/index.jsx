@@ -72,7 +72,7 @@ const DebounceSelect = ({ userId, token, backgroundColor, isNonMobileScreens, de
                     navigate(`/profile/${user._id}`)
                 }}
             >
-                <Avatar src={`http://localhost:8080/images/${userPicturePath}`} />
+                <Avatar src={`${process.env.REACT_APP_HOST_NAME}/images/${userPicturePath}`} />
                 <Typography
                     sx={{
                         fontSize: '1rem',
@@ -147,7 +147,7 @@ const DebounceSelect = ({ userId, token, backgroundColor, isNonMobileScreens, de
             }
             setisLoading(true);
 
-            const response = await fetch(`http://localhost:8080/users/search/${e.target.value}`, {
+            const response = await fetch(`${process.env.REACT_APP_HOST_NAME}/users/search/${e.target.value}`, {
                 method: 'GET',
                 headers: { Authorization: `Bearer ${token}` }
             })
@@ -399,7 +399,7 @@ const Navbar = () => {
                                     gap="3rem"
                                 >
                                     <Avatar
-                                        src={`http://localhost:8080/images/${user.picturePath}`}
+                                        src={`${process.env.REACT_APP_HOST_NAME}/images/${user.picturePath}`}
                                         alt={fullName}
                                         sx={{ width: 84, height: 84 }}
                                     />

@@ -22,7 +22,7 @@ const Comment = ({ userId, fullName, userPicturePath, createdAt, comment}) => {
     return (
         <Grid container marginTop='1rem'>
             <Avatar
-                src={`http://localhost:8080/images/${userPicturePath}`}
+                src={`${process.env.REACT_APP_HOST_NAME}/images/${userPicturePath}`}
                 alt={firstName}
                 sx={{ width: '36px', height: '36px', cursor: 'pointer' }}
                 onClick={handleProfile}    
