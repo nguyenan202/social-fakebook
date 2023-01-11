@@ -17,3 +17,17 @@ A fullstack facebook clone with react, express, mongodb, nodejs
 - Send friend request, Accept, Refuse friends request
 - Search, View Friends profile
 - Chat app(comming soon)
+
+### Review
+
+![Preview 1](https://i.ibb.co/JQ65n2k/webtest.png)
+
+### Technology
+
+- ReactJs
+- Material UI
+- Redux, Redux toolkit
+- Formik, Yup
+- Nodejs
+- ExpressJs
+- MongoDB
