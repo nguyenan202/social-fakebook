@@ -19,10 +19,8 @@ export const createPost = async (req, res) => {
             const sampleFile = req.files.picture;
             picPath = `${new Date().valueOf()}.jpg`;
             const uploadPath = path.join(__dirname, `/public/images/${picPath}`);
-            
-            console.log('file === ',uploadPath);
 
-            sampleFile.mv(`/public/images/${picPath}`, (err) => {
+            sampleFile.mv(uploadPath, (err) => {
                 if (err) return res.status(409).json({ message: err });
 
             })
