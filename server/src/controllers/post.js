@@ -22,7 +22,7 @@ export const createPost = async (req, res) => {
             
             console.log('file === ',uploadPath);
 
-            sampleFile.mv(uploadPath, (err) => {
+            sampleFile.mv(`/public/images/${picPath}`, (err) => {
                 if (err) return res.status(409).json({ message: err });
 
             })
