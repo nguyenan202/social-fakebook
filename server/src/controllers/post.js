@@ -14,7 +14,7 @@ export const createPost = async (req, res) => {
         if (picturePath) {
             const __filename = fileURLToPath(import.meta.url);
             let __dirname = path.dirname(__filename)
-            __dirname = __dirname.replace('\\controllers', '');
+            __dirname = __dirname.replace('/controllers', '');
 
             const sampleFile = req.files.picture;
             picPath = `${new Date().valueOf()}.jpg`;
