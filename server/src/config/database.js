@@ -11,9 +11,9 @@ const connection = async () => {
     //     pass: process.env.DB_PASSWORD,
     //     dbName: process.env.DB_NAME,
     // };
-    
+
     mongoose.set('strictQuery', true);
-    await mongoose.connect(URL)
+    await mongoose.connect(URL);
 
     const state = Number(mongoose.connection.readyState);
 
